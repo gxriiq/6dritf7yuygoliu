@@ -1,1 +1,7 @@
-
+{
+  "name": "TrollDM",
+  "description": "Create fake messages locally. Usage: /dm",
+  "authors": [{ "name": "gxriiq", "id": "0" }],
+  "main": "index.js",
+  "version": "1.0.0"
+}
