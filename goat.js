@@ -1,4 +1,124 @@
-// bundle.js - Combine with other plugins
-(function() {
-"use strict";(()=>{function H(e){window.enmity.plugins.registerPlugin(e)}var L=window.enmity.modules.common.Constants,ye=window.enmity.modules.common.Clipboard,Me=window.enmity.modules.common.Assets,Ae=window.enmity.modules.common.Messages,be=window.enmity.modules.common.Clyde,we=window.enmity.modules.common.Avatars,ke=window.enmity.modules.common.Native,c=window.enmity.modules.common.React,De=window.enmity.modules.common.Dispatcher,Ce=window.enmity.modules.common.Storage,j=window.enmity.modules.common.Toasts,Le=window.enmity.modules.common.Dialog,Te=window.enmity.modules.common.Token,xe=window.enmity.modules.common.REST,v=window.enmity.modules.common.Settings,Ne=window.enmity.modules.common.Users,V=window.enmity.modules.common.Navigation,Fe=window.enmity.modules.common.NavigationNative,Re=window.enmity.modules.common.NavigationStack,Oe=window.enmity.modules.common.Theme,Y=window.enmity.modules.common.Linking,$=window.enmity.modules.common.StyleSheet,ve=window.enmity.modules.common.ColorMap,Ue=window.enmity.modules.common.Components,Pe=window.enmity.modules.common.Locale,Be=window.enmity.modules.common.Profiles,Ge=window.enmity.modules.common.Lodash,He=window.enmity.modules.common.Logger,je=window.enmity.modules.common.Flux,Ve=window.enmity.modules.common.SVG,Ye=window.enmity.modules.common.Scenes,$e=window.enmity.modules.common.Moment;function K(e){return window.enmity.patcher.create(e)}var I="HiddenDM",q="2.0.0";var J={name:I,version:q,description:"Create fake messages from any user in DMs - Updated for Discord IPA",authors:[{name:"dylan",id:"1278523345498800130"},{name:"updated",id:"0"}],color:"#8A2BE2"};var{components:i}=window.enmity,ze=i.Alert,Qe=i.Button,We=i.FlatList,z=i.Image,Ze=i.ImageBackground,Xe=i.KeyboardAvoidingView,es=i.Modal,ss=i.Pressable,ts=i.RefreshControl,Q=i.ScrollView,ns=i.SectionList,as=i.StatusBar,rs=i.StyleSheet,os=i.Switch,T=i.Text,is=i.TextInput,ds=i.TouchableHighlight,ls=i.TouchableOpacity,cs=i.TouchableWithoutFeedback,gs=i.Touchable,P=i.View,ms=i.VirtualizedList,hs=i.Form,us=i.FormArrow,fs=i.FormCTA,W=i.FormCTAButton,Ss=i.FormCardSection,_s=i.FormCheckbox,Is=i.FormDivider,Es=i.FormHint,ps=i.FormIcon,ys=i.FormInput,Ms=i.FormLabel,As=i.FormRadio,E=i.FormRow,x=i.FormSection,bs=i.FormSelect,ws=i.FormSubLabel,ks=i.FormSwitch,Ds=i.FormTernaryCheckBox,Cs=i.FormText,Ls=i.FormTextColors,Ts=i.FormTextSizes;function b(e){return window.enmity.assets.getIDByName(e)}var p={byProps:(...e)=>window.enmity.modules.filters.byProps(...e),byName:(e,s)=>window.enmity.modules.filters.byName(e,s),byTypeName:(e,s)=>window.enmity.modules.filters.byTypeName(e,s),byDisplayName:(e,s)=>window.enmity.modules.filters.byDisplayName(e,s)};function Z(...e){return window.enmity.modules.bulk(...e)}function X(...e){return window.enmity.modules.getByProps(...e)}var Fs=window.enmity.modules.common;function w(e,s,t){window.enmity.settings.set(e,s,t)}function k(e,s,t){return window.enmity.settings.get(e,s,t)}var ce=b("img_account_sync_github_white"),ge=b("Discord"),me=b("Trash"),$s=b("Small"),he=X("acceptInviteAndTransitionToInviteChannel");var se;(function(e){e[e.BuiltIn=0]="BuiltIn",e[e.Guild=1]="Guild",e[e.DM=2]="DM"})(se||(se={}));var te;(function(e){e[e.Chat=1]="Chat",e[e.User=2]="User",e[e.Message=3]="Message"})(te||(te={}));var ne;(function(e){e[e.BuiltIn=0]="BuiltIn",e[e.BuiltInText=1]="BuiltInText",e[e.BuiltInIntegration=2]="BuiltInIntegration",e[e.Bot=3]="Bot",e[e.Placeholder=4]="Placeholder"})(ne||(ne={}));var ae;(function(e){e[e.Role=1]="Role",e[e.User=2]="User"})(ae||(ae={}));var A;(function(e){e[e.SubCommand=1]="SubCommand",e[e.SubCommandGroup=2]="SubCommandGroup",e[e.String=3]="String",e[e.Integer=4]="Integer",e[e.Boolean=5]="Boolean",e[e.User=6]="User",e[e.Channel=7]="Channel",e[e.Role=8]="Role",e[e.Mentionnable=9]="Mentionnable",e[e.Number=10]="Number",e[e.Attachment=11]="Attachment"})(A||(A={}));var re;(function(e){e[e.ApplicationCommand=2]="ApplicationCommand",e[e.MessageComponent=3]="MessageComponent"})(re||(re={}));function S(e,s,t,a){window.enmity.clyde.sendReply(e,s,t,a)}function D(e,s,t){return window.enmity.utilities.findInReactTree(e,s,t)}function ue(){return((Date.now()-14200704e5)*4194304).toString()}var[o,f,N,F,Nt,R,Ft,u,m,B]=Z(p.byProps("_currentDispatchActionType","_subscriptions","_actionHandlers","_waitQueue"),p.byProps("getMessage","getMessages"),p.byProps("getUser","getUsers"),p.byProps("getChannel","getDMUserIds","getLastSelectedChannelId"),p.byProps("getUserAvatarURL","getGuildIconURL"),p.byProps("sendMessage","receiveMessage"),p.byProps("receiveMessage","sendMessage"),p.byProps("bulkAck"),p.byProps("getAllReadStates"),p.byName("UserProfileBadge",!1));function fe(){try{if(m&&m.getAllReadStates){let s=m.getAllReadStates().filter(t=>m.hasUnread&&m.hasUnread(t.channelId));if(s.length>0&&u&&u.bulkAck){let t=s.map(a=>({channelId:a.channelId,messageId:a._lastMessageId||a.lastMessageId}));u.bulkAck(t),t.length,t.map(a=>a.channelId)}}}catch(e){}}function Se(e,s){M[e]||(M[e]={}),M[e][s]=!0;try{w(I,"readStates",JSON.stringify(M))}catch{}}var C=K("HiddenDM"),M={};function _(e,s,t){try{if(o&&typeof o.dispatch=="function"){let a={...s,state:"SENT",flags:s.flags||0,blocked:!1,pinned:!1,tts:!1,mention_everyone:!1,mentions:[],mention_roles:[],reactions:[],attachments:[],embeds:[],_state:s._state||{messageId:s.id,channelId:e,guildId:s.guild_id,isOptimistic:!1,hasBeenEdited:!1,hasBeenDeleted:!1}},n={type:"MESSAGE_CREATE",channelId:e,message:a,optimistic:!1,isFakeHiddenDM:!0,guildId:s.guild_id,isPushNotification:!1,suppressNotifications:!0,suppressEmbeds:!1,isRead:!0,isAcknowledged:!0,readState:"READ",readTimestamp:Date.now(),silent:!0,noNotification:!0,suppressAllNotifications:!0};o.dispatch(n);try{o.dispatch({type:"MESSAGE_ACK",channelId:e,messageId:s.id,timestamp:s.timestamp,readState:"READ",isRead:!0,isAcknowledged:!0}),Se(e,s.id)}catch{}}}}catch{}}var h={loadMessages(){try{let e=k(I,"fakeMessages","{}");return M=k(I,"readStates","{}"),typeof M=="string"?M=JSON.parse(M):typeof M!="object"&&(M={}),JSON.parse(e)}catch{return{}}},getMessages(e){let s=h.loadMessages();return s[e]||[]},storeMessages(e){try{w(I,"fakeMessages",JSON.stringify(e))}catch{}}},Ee={id:I,name:J.name,version:J.version,description:J.description,authors:J.authors,color:J.color,commands:[{name:"dm",description:"Create a fake message from any user in DMs",usage:"/dm [user] [message]",options:[{name:"user",description:"The user to fake the message from",type:A.User,required:!0},{name:"message",description:"The message content",type:A.String,required:!0}],applicationId:I,inputType:ne.Bot,execute:async(e=[],s)=>{try{if(e.length<2)return void S(s,"Error: Invalid syntax. Usage: `/dm [user] [message]`");let t=e[0],a=e.slice(1).join(" "),n=F?.getLastSelectedChannelId?.();if(!n)return void S(s,"Error: No channel selected");let r=N?.getUser?.(t);if(!r)return void S(s,"Error: User not found");let d=h.loadMessages();if(d[n]||(d[n]=[]),d[n].push({id:ue(),content:a,author:r,timestamp:new Date().toISOString(),edited_timestamp:null,mention_everyone:!1,mentions:[],mention_roles:[],mention_channels:[],attachments:[],embeds:[],reactions:[],pinned:!1,webhook_id:null,type:0,activity:null,application:null,message_reference:null,flags:0,components:[],interaction:{id:ue(),type:1,name:"dm",user:r},thread:null,position:null}),h.storeMessages(d),_(n,d[n][d[n].length-1],"command_dm"),!1){let l=d[n];l.sort((g,M)=>{let oe=new Date(g.timestamp).getTime(),ie=new Date(M.timestamp).getTime();return oe-ie}),l.forEach(g=>{_(n,g,"startup")})}}catch(t){S(s,"Error creating fake message: "+String(t))}},{name:"reply",description:"Reply to a fake message",usage:"/reply [id|last] [message]",options:[{name:"target",description:"Message ID or 'last'",type:A.String,required:!0},{name:"message",description:"The reply content",type:A.String,required:!0}],applicationId:I,inputType:ne.Bot,execute:async(e=[],s)=>{try{if(e.length<2)return void S(s,"Error: Invalid syntax. Usage: `/reply [id|last] [message]`");let t=F?.getLastSelectedChannelId?.();if(!t)return void S(s,"Error: No channel selected");let a=h.loadMessages()[t];if(!a||a.length===0)return void S(s,"Error: No messages found");let n=a[a.length-1],r=e[0];r!=="last"&&(n=a.find(d=>d.id===r)),n||(n=a[a.length-1]);let d=e.slice(1).join(" "),l=h.loadMessages();l[t]||(l[t]=[]),l[t].push({id:ue(),content:d,author:n.author,timestamp:new Date().toISOString(),edited_timestamp:null,mention_everyone:!1,mentions:[],mention_roles:[],mention_channels:[],attachments:[],embeds:[],reactions:[],pinned:!1,webhook_id:null,type:0,activity:null,application:null,message_reference:{message_id:n.id,channel_id:t,guild_id:null,fail_if_not_exists:!1},flags:0,components:[],interaction:null,thread:null,position:null}),h.storeMessages(l),_(t,l[t][l[t].length-1],"command_reply"),S(s,"Message reply created!")}}catch(t){S(s,"Error creating reply: "+String(t))}}],settings:J,_subscriptions:{},_patchMessageStore(){try{if(o){o.subscribe("CHANNEL_SELECT",e=>{e.channelId&&(e.channelId,this._handleMessageLoadingEvent?.(e.channelId,"channel_select",0))});const e=["LOAD_MESSAGES_SUCCESS","LOAD_MESSAGES_AROUND_SUCCESS","LOAD_MESSAGES_SUCCESS_CACHED","LOAD_THREADS_SUCCESS","LOAD_THREAD_MESSAGES_SUCCESS","LOAD_PINNED_MESSAGES_SUCCESS","LOAD_MESSAGE_INTERACTION_DATA_SUCCESS"];e.forEach(s=>{o.subscribe(s,t=>{t.channelId&&(t.channelId,this._handleMessageLoadingEvent?.(t.channelId,s,0))})})}}catch(e){}}},_handleMessageLoadingEvent(e,s,t=0){try{let a=h.getMessages(e),n=f?.getMessages?.(e);if(a.length>0&&(!n||!n.messages))a.sort((r,d)=>{let l=new Date(r.timestamp).getTime(),g=new Date(d.timestamp).getTime();return l-g}).forEach(r=>{_(e,r,s)});else if(a.length>0&&n&&n.messages){let r=a.filter(d=>!n.messages.find(l=>l.id===d.id));r.length>0&&r.forEach(d=>{_(e,d,s)})}}catch(a){}}},_preloadAllFakeMessages(){try{let e=h.messages||Object.keys(h.loadMessages());Object.keys(h.loadMessages()).forEach(s=>{let t=h.getMessages(s);t.length>0&&t.sort((a,n)=>{let r=new Date(a.timestamp).getTime(),d=new Date(n.timestamp).getTime();return r-d}).forEach(a=>{_(s,a,"smooth_preload")})})}catch(e){}},onStart(){try{this._patchMessageStore?.();h.loadMessages();try{this._preloadAllFakeMessages?.()}catch(e){}let e=()=>{if(window.enmity?.api?.commands)this.commands?.forEach(s=>{try{window.enmity.api.commands.registerCommand(s)}catch(t){}});else setTimeout(e,1e3)};setTimeout(e,500)}catch(e){console.error("Error in onStart:",e)}},onStop(){try{C.unpatchAll(),window.enmity?.api?.commands&&this.commands?.forEach(e=>{try{window.enmity.api.commands.unregisterCommand(e.id)}catch(s){}})}}};H(Ee);})();
-})();
+const {
+  metadata: { name: PluginName },
+  storage,
+  patcher,
+  commands,
+  modules: {
+    common: { Dispatcher, FluxDispatcher, Messages, Channels, Users, SelectedChannel },
+    filters: { byProps }
+  }
+} = window.vendetta; // btloader typically uses the vendetta/aliucord bridge
+
+// Helper to generate a fake Snowflake ID
+const generateId = () => ((Date.now() - 14200704e5) * 4194304).toString();
+
+const HiddenDM = {
+  onLoad() {
+    // Initialize storage for fake messages
+    storage.fakeMessages ??= {};
+
+    // 1. THE PATCH: Injects fake messages into the UI message list
+    const MessageStore = byProps("getMessages", "getMessage");
+    patcher.after("getMessages", MessageStore, ([channelId], result) => {
+      const fakes = storage.fakeMessages[channelId] || [];
+      if (fakes.length === 0) return result;
+
+      // Merge real messages with our fakes
+      const messages = [...(result?.messages || [])];
+      fakes.forEach(fake => {
+        if (!messages.find(m => m.id === fake.id)) {
+          messages.push(fake);
+        }
+      });
+
+      // Sort by timestamp so they appear in order
+      messages.sort((a, b) => new Date(a.timestamp) - new Date(b.timestamp));
+
+      return { ...result, messages };
+    });
+
+    // 2. THE DM COMMAND: /dm <user> <message>
+    commands.registerCommand({
+      name: "dm",
+      displayName: "dm",
+      description: "Create a fake message from any user (Local Only)",
+      displayDescription: "Create a fake message from any user (Local Only)",
+      options: [
+        {
+          name: "user",
+          displayName: "user",
+          description: "The user to impersonate",
+          type: 6, // User type
+          required: true,
+        },
+        {
+          name: "message",
+          displayName: "message",
+          description: "Message content",
+          type: 3, // String type
+          required: true,
+        }
+      ],
+      execute: (args, ctx) => {
+        const userId = args[0].value;
+        const content = args[1].value;
+        const channelId = ctx.channel.id;
+        const user = Users.getUser(userId);
+
+        if (!user) {
+          return { content: "Error: User not found in local cache." };
+        }
+
+        const fakeMsg = {
+          id: generateId(),
+          type: 0,
+          content: content,
+          channel_id: channelId,
+          author: {
+            id: user.id,
+            username: user.username,
+            discriminator: user.discriminator,
+            avatar: user.avatar,
+            bot: user.bot,
+          },
+          timestamp: new Date().toISOString(),
+          state: "SENT",
+          fake: true // Flag to identify local fakes
+        };
+
+        // Save to storage
+        storage.fakeMessages[channelId] ??= [];
+        storage.fakeMessages[channelId].push(fakeMsg);
+
+        // Force UI update via Dispatcher
+        FluxDispatcher.dispatch({
+          type: "MESSAGE_CREATE",
+          channelId: channelId,
+          message: fakeMsg,
+          optimistic: false,
+          sendMessageOptions: {},
+          isPushNotification: false,
+        });
+      }
+    });
+
+    // 3. THE CLEAR COMMAND: /cleardms
+    commands.registerCommand({
+      name: "cleardms",
+      displayName: "cleardms",
+      description: "Clear all local fake messages in this channel",
+      displayDescription: "Clear all local fake messages in this channel",
+      execute: (args, ctx) => {
+        const channelId = ctx.channel.id;
+        delete storage.fakeMessages[channelId];
+        return { content: "Fake messages cleared for this channel. (Restart or switch channels to refresh UI)" };
+      }
+    });
+  },
+
+  onUnload() {
+    patcher.unpatchAll();
+  }
+};
+
+export default HiddenDM;
